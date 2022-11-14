@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>International telephone input</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style/login.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://res.cloudinary.com/urbanclap/image/upload/v1467812027/uc_logo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div id="hidden">
+        <span id="span" onclick="back()">&#10005;</span>
+        <p id="para">Please login to continue</p>
+        <p />
+      </div>
+
+      <div id="form">
+        <input
+          id="phone"
+          type="tel"
+          placeholder="Enter phone number"
+        /><br /><br />
+        <button id="btn" onclick="submit()">Continue</button>
+      </div>
+    </div>
+    <div class="body_img">
+      <img src="./images/login.png" alt="" />
+    </div>
+  </body>
+</html>
+<script>
+  const phoneInputField = document.querySelector("#phone");
+  const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+
+  let submit = () => {
+    let mobile = document.getElementById("phone").value;
+
+    let obj = { mobile };
+    console.log(obj);
+    localStorage.setItem("data", JSON.stringify(obj));
+    
+setTimeout(() => {
+  alert("Your Otp is 1234");
+  window.location.href = "otp.html";
+}, 1000);
+    
+  };
+  let back = () => {
+    window.location.href = "index.html";
+  };
+</script>
