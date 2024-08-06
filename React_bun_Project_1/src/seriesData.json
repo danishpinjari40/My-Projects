@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "title": "Stranger Things",
+      "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyKu0FsmjKVMIisF2ALtMaANdeCJWaNBbnlA&s",
+      "rating": 8.7
+    },
+    {
+      "id": 2,
+      "title": "Breaking Bad",
+      "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ9cUS5363RXBpTshUuLY1vlVd8MEZDRm2cA&s",
+      "rating": 9.5
+    },
+    {
+      "id": 3,
+      "title": "The Crown",
+      "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQznkiBh6QRQ85eplTs4bb08SBfZGG92oxnpw&s",
+      "rating": 8.6
+    },
+    {
+      "id": 4,
+      "title": "The Mandalorian",
+      "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGgUsqEwRcuZoibBjc733YETwiEfPBP6ruqw&s",
+      "rating": 8.9
+    },
+    {
+      "id": 5,
+      "title": "Game of Thrones",
+      "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWJQe386fgA8L-W2JGsDKdlQno7QspsNs33Q&s",
+      "rating": 9.3
+    }
+  
+]
