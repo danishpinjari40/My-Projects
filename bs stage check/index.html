@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HSRP BS Stage Checker - Check Vehicle BS Norms</title>
+		<meta
+			name="description"
+			content="Check your vehicle's Bharat Stage emission norms for HSRP compliance. Easy tool for Indian vehicle owners."
+		/>
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='100'>🚗</text></svg>"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1><i class="fas fa-car"></i> HSRP BS Stage Checker</h1>
+				<p class="tagline">
+					Check your vehicle's Bharat Stage emission norms for HSRP compliance
+				</p>
+			</header>
+
+			<div class="app-container">
+				<div class="input-section">
+					<h2 class="section-title">
+						<i class="fas fa-car-side"></i> Vehicle Details<i
+							class="fas fa-motorcycle"
+						></i>
+					</h2>
+
+					<div class="search-container">
+						<div class="search-box">
+							<i class="fas fa-search" aria-hidden="true"></i>
+							<input
+								type="text"
+								id="brandSearch"
+								placeholder="Search for a vehicle brand..."
+								aria-label="Search vehicle brands"
+							/>
+						</div>
+					</div>
+
+					<div class="selected-details" id="selectedDetails" aria-live="polite">
+						<h3><i class="fas fa-check-circle"></i> Selected Vehicle</h3>
+						<div class="detail-item">
+							<span class="detail-label">Brand:</span>
+							<span class="detail-value" id="selectedBrand">-</span>
+						</div>
+						<div class="detail-item">
+							<span class="detail-label">Year:</span>
+							<span class="detail-value" id="selectedYear">-</span>
+						</div>
+					</div>
+
+					<div
+						class="brand-grid"
+						id="brandGrid"
+						role="list"
+						aria-label="Vehicle brands"
+					>
+						<!-- Brands will be populated by JavaScript -->
+					</div>
+
+					<h3 class="section-title">
+						<i class="fas fa-calendar-alt"></i> Select Manufacturing Year
+					</h3>
+
+					<div
+						class="quick-years"
+						role="group"
+						aria-label="Quick year selection"
+					>
+						<div class="quick-year" data-year="2023" role="button" tabindex="0">
+							2023
+						</div>
+						<div class="quick-year" data-year="2022" role="button" tabindex="0">
+							2022
+						</div>
+						<div class="quick-year" data-year="2021" role="button" tabindex="0">
+							2021
+						</div>
+						<div class="quick-year" data-year="2020" role="button" tabindex="0">
+							2020
+						</div>
+					</div>
+
+					<div
+						class="year-selection"
+						id="yearSelection"
+						role="list"
+						aria-label="Manufacturing years"
+					>
+						<!-- Years will be populated by JavaScript -->
+					</div>
+
+					<button onclick="checkBSStage()" aria-label="Check Bharat Stage">
+						<i class="fas fa-search"></i> Check BS Stage
+					</button>
+				</div>
+
+				<div class="result-section">
+					<h2 class="section-title">
+						<i class="fas fa-clipboard-check"></i> Result
+					</h2>
+					<div id="result" class="result" role="status" aria-live="polite">
+						<!-- Results will be displayed here -->
+					</div>
+
+					<div class="info-box" role="complementary">
+						<h3><i class="fas fa-lightbulb"></i> Did You Know?</h3>
+						<p>
+							BS-IV norms were implemented across India from April 2017, while
+							BS-VI norms were implemented from April 2020, skipping BS-V
+							entirely.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				<p>
+					<i class="fas fa-exclamation-triangle"></i> This tool provides
+					guidance only. For official verification, refer to your vehicle's RC
+					document or consult RTO authorities.
+				</p>
+				<p>
+					© <span id="currentYear">2023</span> HSRP BS Stage Checker | Made with
+					<i class="fas fa-heart" style="color: #b21f1f;"></i> by Danish Pinjari
+				</p>
+			</footer>
+		</div>
+
+		<script src="script.js"></script>
+		<script>
+			// Update copyright year automatically
+			document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+			// Add keyboard navigation for quick years
+			document.addEventListener('DOMContentLoaded', function() {
+				const quickYears = document.querySelectorAll('.quick-year');
+				quickYears.forEach(year => {
+					year.addEventListener('keypress', function(e) {
+						if (e.key === 'Enter' || e.key === ' ') {
+							e.preventDefault();
+							this.click();
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
