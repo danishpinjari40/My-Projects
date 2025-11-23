@@ -9,7 +9,7 @@ A web app to check Bharat Stage emission norms for HSRP compliance of Indian veh
 - 🎯 Real-time results
 
 ## Live Demo
-[View Live Site](https://your-username.github.io/hsrp-bs-checker)
+[View Live Site](https://bsstagecheckforhsrp.netlify.app/)
 
 ## Technologies
 - HTML5, CSS3, JavaScript
